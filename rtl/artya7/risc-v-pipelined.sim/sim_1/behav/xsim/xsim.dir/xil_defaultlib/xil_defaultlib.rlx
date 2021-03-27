@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+Y:/projects/risc-v-pipelined/rtl/artya7/risc-v-pipelined.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,uvm,,,,,,
+Y:/projects/risc-v-pipelined/rtl/sim_vivado/core/alu_tf.sv,1616798668,systemVerilog,,,Y:/projects/risc-v-pipelined/rtl/soc/core/core_defines.vh,alu_tf,,uvm,../../../../../soc/core,,,,,
+Y:/projects/risc-v-pipelined/rtl/soc/core/alu.sv,1616798134,systemVerilog,Y:/projects/risc-v-pipelined/rtl/sim_vivado/core/alu_tf.sv,Y:/projects/risc-v-pipelined/rtl/sim_vivado/core/alu_tf.sv,Y:/projects/risc-v-pipelined/rtl/soc/core/core_defines.vh,$unit_alu_sv;alu,,uvm,../../../../../soc/core,,,,,
+Y:/projects/risc-v-pipelined/rtl/soc/core/core_defines.vh,1616795407,verilog,,,,,,,,,,,,
