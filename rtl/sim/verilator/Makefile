@@ -24,6 +24,7 @@
 #
 
 export VERILATOR_ROOT=Y:/riscv-toolchain/msys2/mingw64/share/verilator
+GTKWAVEPATH?=Y:/riscv-toolchain/gtkwave64/bin/gtkwave.exe
 
 # Configuration options
 FEATURE_DBG_PORT?=OFF
@@ -122,7 +123,7 @@ run:
 	@echo
 
 gtkwave:
-	@gtkwave ./logs/vlt_dump.vcd
+	@$(GTKWAVEPATH) ./logs/vlt_dump.vcd
 
 ######################################################################
 # Other targets
