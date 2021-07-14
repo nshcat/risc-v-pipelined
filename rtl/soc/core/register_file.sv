@@ -24,9 +24,16 @@ module register_file(
     `define REG_ADDR_BITS 4
 `endif
 
+initial begin
+    integer i;
+    for (i = 0; i < `NUM_REGISTERS; i = i + 1)
+        registers[i] = 32'h0;
+end
+
 // Register write back
 always_ff @(posedge clk_i) begin
     if (!reset_i) begin
+        integer i;
         for (i = 0; i < `NUM_REGISTERS; i = i + 1)
             registers[i] <= 32'h0;
     end
@@ -38,8 +45,11 @@ always_ff @(posedge clk_i) begin
 end
 
 // Register read
-logic needs_forward_read_1 = (write_register_i == read_register_1_i);
-logic needs_forward_read_2 = (write_register_i == read_register_2_i);
+logic needs_forward_read_1;
+logic needs_forward_read_2;
+
+assign needs_forward_read_1 = (write_register_i == read_register_1_i) & ctrl_write_back_i;
+assign needs_forward_read_2 = (write_register_i == read_register_2_i) & ctrl_write_back_i;
 
 always_comb begin
     register_data_1_o = needs_forward_read_1 ? write_back_data_i : registers[read_register_1_i[`REG_ADDR_BITS-1:0]];
