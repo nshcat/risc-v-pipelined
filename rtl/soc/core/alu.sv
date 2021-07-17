@@ -1,11 +1,12 @@
 `include "core_defines.vh"
+`include "control_signals.vh"
 
 module alu(
-    input logic [31:0] a_i,
-    input logic [31:0] b_i,
+    input word_t a_i,
+    input word_t b_i,
     input control_alu_op_e ctrl_alu_op_i,
 
-    output logic [31:0] result_o,
+    output word_t result_o,
     output logic Z_o,
     output logic N_o,
     output logic S_o,
